@@ -26,7 +26,7 @@ Demo的基本交互模仿的iOS原生相机进行实现的，因为工作关系�
 
 未完成部分包括人脸检测、HDR拍摄、视频采集缩放、照片拍摄缩放、高帧率捕捉。
 
-效果图如下：
+
 ![视频采集](https://github.com/provswin/HHAVVideoCapture/blob/master/Images/WechatIMG4.jpeg)
 
 ![照片拍摄](https://github.com/provswin/HHAVVideoCapture/blob/master/Images/WechatIMG3.jpeg)
