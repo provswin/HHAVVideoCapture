@@ -3,6 +3,7 @@ HHAVVideoCapture是基于iOS AVCaptureSession实现的一个支持视频捕捉�
 Demo的基本交互模仿的iOS原生相机进行实现的，因为工作关系只完成了部分功能；
 
 支持版本iOS 10以上
+
 1、视频采集
 
    Torch Mode自动化设置
