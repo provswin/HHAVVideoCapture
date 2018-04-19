@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7201C851206CAFCF006EA084 /* HHAVCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7201C850206CAFCF006EA084 /* HHAVCameraView.xib */; };
+		7201C854206CC8D2006EA084 /* HHAVOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7201C853206CC8D2006EA084 /* HHAVOverlayView.m */; };
+		7201C856206CCC00006EA084 /* HHAVOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7201C855206CCC00006EA084 /* HHAVOverlayView.xib */; };
+		7201C85B206CF3DE006EA084 /* HHAVCaptureButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7201C85A206CF3DE006EA084 /* HHAVCaptureButton.m */; };
+		7201C85D206CF57A006EA084 /* HHAVCaptureButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7201C85C206CF57A006EA084 /* HHAVCaptureButton.xib */; };
+		7207CAE7206F214600573336 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7207CAE6206F214600573336 /* Photos.framework */; };
+		7207CAEB2071CB0800573336 /* HHAVFlashModeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7207CAEA2071CB0800573336 /* HHAVFlashModeView.m */; };
+		7207CAED2071CB1800573336 /* HHAVFlashModeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7207CAEC2071CB1800573336 /* HHAVFlashModeView.xib */; };
+		7207CAF320731A3800573336 /* JX_GCDTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7207CAF120731A3700573336 /* JX_GCDTimerManager.m */; };
+		721AEAD1207A026300D3FCCF /* HHAVLiveButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 721AEAD0207A026300D3FCCF /* HHAVLiveButton.m */; };
+		721AEAD4207B14D800D3FCCF /* HHAVPhotoCaptureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 721AEAD2207B14D700D3FCCF /* HHAVPhotoCaptureDelegate.m */; };
+		72330A79206C7E4C0025911F /* HHAVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72330A78206C7E4C0025911F /* HHAVAppDelegate.m */; };
+		72330A7C206C7E4C0025911F /* HHAVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72330A7B206C7E4C0025911F /* HHAVViewController.m */; };
+		72330A7F206C7E4C0025911F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72330A7D206C7E4C0025911F /* Main.storyboard */; };
+		72330A81206C7E4C0025911F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72330A80206C7E4C0025911F /* Assets.xcassets */; };
+		72330A84206C7E4C0025911F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72330A82206C7E4C0025911F /* LaunchScreen.storyboard */; };
+		72330A87206C7E4C0025911F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72330A86206C7E4C0025911F /* main.m */; };
+		72330A8F206C7EC60025911F /* HHAVCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72330A8E206C7EC60025911F /* HHAVCameraController.m */; };
+		72330A92206C7F140025911F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72330A91206C7F140025911F /* AVFoundation.framework */; };
+		72330A95206C84D70025911F /* HHAVCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72330A94206C84D70025911F /* HHAVCameraView.m */; };
+		72330A98206C98730025911F /* HHAVPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72330A97206C98730025911F /* HHAVPreviewView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7201C850206CAFCF006EA084 /* HHAVCameraView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHAVCameraView.xib; sourceTree = "<group>"; };
+		7201C852206CC8D2006EA084 /* HHAVOverlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVOverlayView.h; sourceTree = "<group>"; };
+		7201C853206CC8D2006EA084 /* HHAVOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVOverlayView.m; sourceTree = "<group>"; };
+		7201C855206CCC00006EA084 /* HHAVOverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHAVOverlayView.xib; sourceTree = "<group>"; };
+		7201C859206CF3DE006EA084 /* HHAVCaptureButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVCaptureButton.h; sourceTree = "<group>"; };
+		7201C85A206CF3DE006EA084 /* HHAVCaptureButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVCaptureButton.m; sourceTree = "<group>"; };
+		7201C85C206CF57A006EA084 /* HHAVCaptureButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHAVCaptureButton.xib; sourceTree = "<group>"; };
+		7207CAE6206F214600573336 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		7207CAE8206F76C800573336 /* HHAVVideoCapture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HHAVVideoCapture.entitlements; sourceTree = "<group>"; };
+		7207CAE92071CB0800573336 /* HHAVFlashModeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVFlashModeView.h; sourceTree = "<group>"; };
+		7207CAEA2071CB0800573336 /* HHAVFlashModeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVFlashModeView.m; sourceTree = "<group>"; };
+		7207CAEC2071CB1800573336 /* HHAVFlashModeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHAVFlashModeView.xib; sourceTree = "<group>"; };
+		7207CAEE2072191800573336 /* HHAVPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVPrefixHeader.pch; sourceTree = "<group>"; };
+		7207CAF120731A3700573336 /* JX_GCDTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JX_GCDTimerManager.m; sourceTree = "<group>"; };
+		7207CAF220731A3800573336 /* JX_GCDTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JX_GCDTimerManager.h; sourceTree = "<group>"; };
+		721AEACF207A026300D3FCCF /* HHAVLiveButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVLiveButton.h; sourceTree = "<group>"; };
+		721AEAD0207A026300D3FCCF /* HHAVLiveButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVLiveButton.m; sourceTree = "<group>"; };
+		721AEAD2207B14D700D3FCCF /* HHAVPhotoCaptureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAVPhotoCaptureDelegate.m; sourceTree = "<group>"; };
+		721AEAD3207B14D700D3FCCF /* HHAVPhotoCaptureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAVPhotoCaptureDelegate.h; sourceTree = "<group>"; };
+		72330A74206C7E4C0025911F /* HHAVVideoCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHAVVideoCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72330A77206C7E4C0025911F /* HHAVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVAppDelegate.h; sourceTree = "<group>"; };
+		72330A78206C7E4C0025911F /* HHAVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVAppDelegate.m; sourceTree = "<group>"; };
+		72330A7A206C7E4C0025911F /* HHAVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVViewController.h; sourceTree = "<group>"; };
+		72330A7B206C7E4C0025911F /* HHAVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVViewController.m; sourceTree = "<group>"; };
+		72330A7E206C7E4C0025911F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72330A80206C7E4C0025911F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72330A83206C7E4C0025911F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		72330A85206C7E4C0025911F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72330A86206C7E4C0025911F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		72330A8D206C7EC60025911F /* HHAVCameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVCameraController.h; sourceTree = "<group>"; };
+		72330A8E206C7EC60025911F /* HHAVCameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVCameraController.m; sourceTree = "<group>"; };
+		72330A91206C7F140025911F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		72330A93206C84D70025911F /* HHAVCameraView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVCameraView.h; sourceTree = "<group>"; };
+		72330A94206C84D70025911F /* HHAVCameraView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVCameraView.m; sourceTree = "<group>"; };
+		72330A96206C98730025911F /* HHAVPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHAVPreviewView.h; sourceTree = "<group>"; };
+		72330A97206C98730025911F /* HHAVPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHAVPreviewView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72330A71206C7E4C0025911F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7207CAE7206F214600573336 /* Photos.framework in Frameworks */,
+				72330A92206C7F140025911F /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7201C858206CE1BF006EA084 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7201C850206CAFCF006EA084 /* HHAVCameraView.xib */,
+				72330A93206C84D70025911F /* HHAVCameraView.h */,
+				72330A94206C84D70025911F /* HHAVCameraView.m */,
+				72330A96206C98730025911F /* HHAVPreviewView.h */,
+				72330A97206C98730025911F /* HHAVPreviewView.m */,
+				7201C855206CCC00006EA084 /* HHAVOverlayView.xib */,
+				7201C852206CC8D2006EA084 /* HHAVOverlayView.h */,
+				7201C853206CC8D2006EA084 /* HHAVOverlayView.m */,
+				7201C859206CF3DE006EA084 /* HHAVCaptureButton.h */,
+				7201C85A206CF3DE006EA084 /* HHAVCaptureButton.m */,
+				7201C85C206CF57A006EA084 /* HHAVCaptureButton.xib */,
+				7207CAE92071CB0800573336 /* HHAVFlashModeView.h */,
+				7207CAEA2071CB0800573336 /* HHAVFlashModeView.m */,
+				7207CAEC2071CB1800573336 /* HHAVFlashModeView.xib */,
+				721AEACF207A026300D3FCCF /* HHAVLiveButton.h */,
+				721AEAD0207A026300D3FCCF /* HHAVLiveButton.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7207CAEF20731A1900573336 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				7207CAF020731A2500573336 /* GCD Timer */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		7207CAF020731A2500573336 /* GCD Timer */ = {
+			isa = PBXGroup;
+			children = (
+				7207CAF220731A3800573336 /* JX_GCDTimerManager.h */,
+				7207CAF120731A3700573336 /* JX_GCDTimerManager.m */,
+			);
+			path = "GCD Timer";
+			sourceTree = "<group>";
+		};
+		72330A6B206C7E4C0025911F = {
+			isa = PBXGroup;
+			children = (
+				72330A76206C7E4C0025911F /* HHAVVideoCapture */,
+				72330A75206C7E4C0025911F /* Products */,
+				72330A90206C7F140025911F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		72330A75206C7E4C0025911F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72330A74206C7E4C0025911F /* HHAVVideoCapture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72330A76206C7E4C0025911F /* HHAVVideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				7207CAEF20731A1900573336 /* Third Party */,
+				7207CAE8206F76C800573336 /* HHAVVideoCapture.entitlements */,
+				7201C858206CE1BF006EA084 /* Views */,
+				72330A77206C7E4C0025911F /* HHAVAppDelegate.h */,
+				72330A78206C7E4C0025911F /* HHAVAppDelegate.m */,
+				72330A7A206C7E4C0025911F /* HHAVViewController.h */,
+				72330A7B206C7E4C0025911F /* HHAVViewController.m */,
+				72330A7D206C7E4C0025911F /* Main.storyboard */,
+				72330A80206C7E4C0025911F /* Assets.xcassets */,
+				72330A82206C7E4C0025911F /* LaunchScreen.storyboard */,
+				72330A85206C7E4C0025911F /* Info.plist */,
+				72330A86206C7E4C0025911F /* main.m */,
+				72330A8D206C7EC60025911F /* HHAVCameraController.h */,
+				72330A8E206C7EC60025911F /* HHAVCameraController.m */,
+				721AEAD3207B14D700D3FCCF /* HHAVPhotoCaptureDelegate.h */,
+				721AEAD2207B14D700D3FCCF /* HHAVPhotoCaptureDelegate.m */,
+				7207CAEE2072191800573336 /* HHAVPrefixHeader.pch */,
+			);
+			path = HHAVVideoCapture;
+			sourceTree = "<group>";
+		};
+		72330A90206C7F140025911F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7207CAE6206F214600573336 /* Photos.framework */,
+				72330A91206C7F140025911F /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72330A73206C7E4C0025911F /* HHAVVideoCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72330A8A206C7E4C0025911F /* Build configuration list for PBXNativeTarget "HHAVVideoCapture" */;
+			buildPhases = (
+				72330A70206C7E4C0025911F /* Sources */,
+				72330A71206C7E4C0025911F /* Frameworks */,
+				72330A72206C7E4C0025911F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHAVVideoCapture;
+			productName = HHAVVideoCapture;
+			productReference = 72330A74206C7E4C0025911F /* HHAVVideoCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72330A6C206C7E4C0025911F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HHAV;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "胡华翔";
+				TargetAttributes = {
+					72330A73206C7E4C0025911F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.DataProtection = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 72330A6F206C7E4C0025911F /* Build configuration list for PBXProject "HHAVVideoCapture" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72330A6B206C7E4C0025911F;
+			productRefGroup = 72330A75206C7E4C0025911F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72330A73206C7E4C0025911F /* HHAVVideoCapture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72330A72206C7E4C0025911F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7201C856206CCC00006EA084 /* HHAVOverlayView.xib in Resources */,
+				72330A84206C7E4C0025911F /* LaunchScreen.storyboard in Resources */,
+				72330A81206C7E4C0025911F /* Assets.xcassets in Resources */,
+				7207CAED2071CB1800573336 /* HHAVFlashModeView.xib in Resources */,
+				7201C851206CAFCF006EA084 /* HHAVCameraView.xib in Resources */,
+				72330A7F206C7E4C0025911F /* Main.storyboard in Resources */,
+				7201C85D206CF57A006EA084 /* HHAVCaptureButton.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72330A70206C7E4C0025911F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72330A7C206C7E4C0025911F /* HHAVViewController.m in Sources */,
+				72330A95206C84D70025911F /* HHAVCameraView.m in Sources */,
+				7207CAEB2071CB0800573336 /* HHAVFlashModeView.m in Sources */,
+				7201C854206CC8D2006EA084 /* HHAVOverlayView.m in Sources */,
+				72330A98206C98730025911F /* HHAVPreviewView.m in Sources */,
+				72330A8F206C7EC60025911F /* HHAVCameraController.m in Sources */,
+				7201C85B206CF3DE006EA084 /* HHAVCaptureButton.m in Sources */,
+				72330A87206C7E4C0025911F /* main.m in Sources */,
+				7207CAF320731A3800573336 /* JX_GCDTimerManager.m in Sources */,
+				721AEAD1207A026300D3FCCF /* HHAVLiveButton.m in Sources */,
+				72330A79206C7E4C0025911F /* HHAVAppDelegate.m in Sources */,
+				721AEAD4207B14D800D3FCCF /* HHAVPhotoCaptureDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		72330A7D206C7E4C0025911F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72330A7E206C7E4C0025911F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		72330A82206C7E4C0025911F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72330A83206C7E4C0025911F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		72330A88206C7E4C0025911F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		72330A89206C7E4C0025911F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72330A8B206C7E4C0025911F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G79XRAY29K;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/HHAVPrefixHeader.pch";
+				INFOPLIST_FILE = HHAVVideoCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.showsoft.HHAVVideoCapture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		72330A8C206C7E4C0025911F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G79XRAY29K;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PRODUCT_NAME)/HHAVPrefixHeader.pch";
+				INFOPLIST_FILE = HHAVVideoCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.showsoft.HHAVVideoCapture;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72330A6F206C7E4C0025911F /* Build configuration list for PBXProject "HHAVVideoCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72330A88206C7E4C0025911F /* Debug */,
+				72330A89206C7E4C0025911F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72330A8A206C7E4C0025911F /* Build configuration list for PBXNativeTarget "HHAVVideoCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72330A8B206C7E4C0025911F /* Debug */,
+				72330A8C206C7E4C0025911F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72330A6C206C7E4C0025911F /* Project object */;
+}

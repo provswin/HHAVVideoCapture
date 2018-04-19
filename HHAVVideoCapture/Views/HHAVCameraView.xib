@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HHAVCameraView">
+            <connections>
+                <outlet property="overlayView" destination="iiO-4J-VN2" id="724-tv-tdn"/>
+                <outlet property="previewView" destination="kcU-UV-inq" id="A2y-vM-xMF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-UV-inq" customClass="HHAVPreviewView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiO-4J-VN2" customClass="HHAVOverlayView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="iiO-4J-VN2" firstAttribute="leading" secondItem="kcU-UV-inq" secondAttribute="leading" id="9nL-eD-LYt"/>
+                <constraint firstItem="kcU-UV-inq" firstAttribute="trailing" secondItem="iiO-4J-VN2" secondAttribute="trailing" id="K4b-Uk-Ywd"/>
+                <constraint firstItem="kcU-UV-inq" firstAttribute="bottom" secondItem="iiO-4J-VN2" secondAttribute="bottom" id="eeI-1g-65y"/>
+                <constraint firstAttribute="bottom" secondItem="kcU-UV-inq" secondAttribute="bottom" id="i5g-eE-XCh"/>
+                <constraint firstItem="kcU-UV-inq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="l6s-ff-ZLB"/>
+                <constraint firstItem="iiO-4J-VN2" firstAttribute="top" secondItem="kcU-UV-inq" secondAttribute="top" id="tGU-om-9yC"/>
+                <constraint firstItem="kcU-UV-inq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vk1-3J-bjc"/>
+                <constraint firstAttribute="trailing" secondItem="kcU-UV-inq" secondAttribute="trailing" id="zOK-BP-Sx5"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="36" y="54"/>
+        </view>
+    </objects>
+</document>
