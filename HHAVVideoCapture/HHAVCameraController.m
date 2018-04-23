@@ -39,9 +39,6 @@ NSString *const HHAVThumbnailCreatedNotification = @"THThumbnailCreated";
 
 /* 是否启用了Live Photo */
 @property(assign, nonatomic) BOOL livePhotoModeEnable;
-
-/* 拍照设定 */
-@property(strong, nonatomic) AVCapturePhotoSettings *photoSettings;
 @end
 
 static void *HHAVSessionRunningContext = &HHAVSessionRunningContext;
@@ -63,7 +60,7 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
     [_session removeObserver:self forKeyPath:@"running"];
 
     [_photoOutput removeObserver:self forKeyPath:@"isFlashScene"];
-//    [_photoOutput removeObserver:self forKeyPath:@"isStillImageStabilizationScene"];
+    [_photoOutput removeObserver:self forKeyPath:@"isStillImageStabilizationScene"];
 }
 
 - (void)setupSession {
@@ -142,17 +139,22 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
 
     BOOL result = [self configVideoInput:error];
 
-
     _backgroundRecordingID = UIBackgroundTaskInvalid;
     
     // 视频
-    _movieFileOutput = [[AVCaptureMovieFileOutput alloc] init];
-    // 最大可录制时长60分钟
-    _movieFileOutput.maxRecordedDuration = CMTimeMake(60 * 60, 1);
-    // 当磁盘空间小于50MB时,停止录制
-    _movieFileOutput.minFreeDiskSpaceLimit = 50 * 1024 * 1024;
-    if ([_session canAddOutput:_movieFileOutput]) {
-        [_session addOutput:_movieFileOutput];
+    if (_movieFileOutput) {
+        if ([_session canAddOutput:_movieFileOutput]) {
+            [_session addOutput:_movieFileOutput];
+        }
+    } else {
+        _movieFileOutput = [[AVCaptureMovieFileOutput alloc] init];
+        // 最大可录制时长60分钟
+        _movieFileOutput.maxRecordedDuration = CMTimeMake(60 * 60, 1);
+        // 当磁盘空间小于50MB时,停止录制
+        _movieFileOutput.minFreeDiskSpaceLimit = 50 * 1024 * 1024;
+        if ([_session canAddOutput:_movieFileOutput]) {
+            [_session addOutput:_movieFileOutput];
+        }
     }
     
     [_session commitConfiguration];
@@ -302,6 +304,7 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
     // 5.添加输出
     // connection relation:  Audio & Video -> AVCaptureMovieFileOutput
     // connection relation:  Video -> AVCaptureStillImageOutput
+    
     // 照片
     _photoOutput = [[AVCapturePhotoOutput alloc] init];
     if ([_session canAddOutput:_photoOutput]) {
@@ -315,23 +318,8 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
             // Fallback on earlier versions
         }
 
-        // Capture HEIF photo when supported, with flash set to auto and high resolution photo enabled.
-        if (@available(iOS 11.0, *)) {
-            if ([self.photoOutput.availablePhotoCodecTypes containsObject:AVVideoCodecTypeHEVC]) {
-                _photoSettings = [AVCapturePhotoSettings photoSettingsWithFormat:@{AVVideoCodecKey: AVVideoCodecTypeHEVC}];
-            } else {
-                _photoSettings = [AVCapturePhotoSettings photoSettings];
-            }
-        } else {
-            // Fallback on earlier versions
-            _photoSettings = [AVCapturePhotoSettings photoSettings];
-        }
-//        _photoSettings.autoStillImageStabilizationEnabled = YES;
-        _photoSettings.highResolutionPhotoEnabled = YES;
-
-        _photoOutput.photoSettingsForSceneMonitoring = _photoSettings;
         [_photoOutput addObserver:self forKeyPath:@"isFlashScene" options:NSKeyValueObservingOptionNew context:&HHAVCameraControllerFlashSceneContext];
-//        [_photoOutput addObserver:self forKeyPath:@"isStillImageStabilizationScene" options:NSKeyValueObservingOptionNew context:&HHAVCameraControllerFlashSceneContext];
+        [_photoOutput addObserver:self forKeyPath:@"isStillImageStabilizationScene" options:NSKeyValueObservingOptionNew context:&HHAVCameraControllerFlashSceneContext];
     }
     
     NSNotificationCenter *nsnc = [NSNotificationCenter defaultCenter];
@@ -444,29 +432,47 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
         AVCaptureConnection *photoOutputConnection = [self.photoOutput connectionWithMediaType:AVMediaTypeVideo];
         photoOutputConnection.videoOrientation = orientation;
         
+        
+        // Capture HEIF photo when supported, with flash set to auto and high resolution photo enabled.
+        AVCapturePhotoSettings *photoSettings;
+        if (@available(iOS 11.0, *)) {
+            if ([self.photoOutput.availablePhotoCodecTypes containsObject:AVVideoCodecTypeHEVC]) {
+                photoSettings = [AVCapturePhotoSettings photoSettingsWithFormat:@{AVVideoCodecKey: AVVideoCodecTypeHEVC}];
+            } else {
+                photoSettings = [AVCapturePhotoSettings photoSettings];
+            }
+        } else {
+            // Fallback on earlier versions
+            photoSettings = [AVCapturePhotoSettings photoSettings];
+        }
+        //        _photoSettings.autoStillImageStabilizationEnabled = YES;
+        photoSettings.highResolutionPhotoEnabled = YES;
+        
+        self->_photoOutput.photoSettingsForSceneMonitoring = photoSettings;
+        
         if ( self.activeVideoInput.device.isFlashAvailable ) {
-            _photoSettings.flashMode = flashMode;
+            photoSettings.flashMode = flashMode;
         }
 
-        if (_photoSettings.availablePreviewPhotoPixelFormatTypes.count > 0) {
-            _photoSettings.previewPhotoFormat = @{(NSString *) kCVPixelBufferPixelFormatTypeKey: _photoSettings.availablePreviewPhotoPixelFormatTypes.firstObject};
+        if (photoSettings.availablePreviewPhotoPixelFormatTypes.count > 0) {
+            photoSettings.previewPhotoFormat = @{(NSString *) kCVPixelBufferPixelFormatTypeKey: photoSettings.availablePreviewPhotoPixelFormatTypes.firstObject};
         }
 
         if (self.livePhotoModeEnable && self.photoOutput.livePhotoCaptureSupported) { // Live Photo capture is not supported in movie mode.
             NSString *livePhotoMovieFileName = [NSUUID UUID].UUIDString;
             NSString *livePhotoMovieFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:[livePhotoMovieFileName stringByAppendingPathExtension:@"mov"]];
-            _photoSettings.livePhotoMovieFileURL = [NSURL fileURLWithPath:livePhotoMovieFilePath];
+            photoSettings.livePhotoMovieFileURL = [NSURL fileURLWithPath:livePhotoMovieFilePath];
         }
         
         if (@available(iOS 11.0, *)) {
             if ( self.photoOutput.depthDataDeliveryEnabled && self.photoOutput.isDepthDataDeliverySupported ) {
-                _photoSettings.depthDataDeliveryEnabled = YES;
+                photoSettings.depthDataDeliveryEnabled = YES;
             } else {
-                _photoSettings.depthDataDeliveryEnabled = NO;
+                photoSettings.depthDataDeliveryEnabled = NO;
             }
         }
         // Use a separate object for the photo capture delegate to isolate each capture life cycle.
-        HHAVPhotoCaptureDelegate *photoCaptureDelegate = [[HHAVPhotoCaptureDelegate alloc] initWithRequestedPhotoSettings:_photoSettings willCapturePhotoAnimation:^{
+        HHAVPhotoCaptureDelegate *photoCaptureDelegate = [[HHAVPhotoCaptureDelegate alloc] initWithRequestedPhotoSettings:photoSettings willCapturePhotoAnimation:^{
             dispatch_async( dispatch_get_main_queue(), ^{
                 if ([self.delegate respondsToSelector:@selector(willCapturePhotoAnimation)]) {
                     [self.delegate willCapturePhotoAnimation];
@@ -520,7 +526,7 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
          until the capture is completed.
          */
         self.inProgressPhotoCaptureDelegates[@(photoCaptureDelegate.requestedPhotoSettings.uniqueID)] = photoCaptureDelegate;
-        [self.photoOutput capturePhotoWithSettings:_photoSettings delegate:photoCaptureDelegate];
+        [self.photoOutput capturePhotoWithSettings:photoSettings delegate:photoCaptureDelegate];
     } );
 }
 
@@ -633,7 +639,7 @@ static void *HHAVCameraControllerFlashSceneContext = &HHAVCameraControllerFlashS
         if (_photoOutput) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if ([self.delegate respondsToSelector:@selector(isFlashScene:)]) {
-                    [self.delegate isFlashScene:_photoOutput.isFlashScene];
+                    [self.delegate isFlashScene:self->_photoOutput.isFlashScene];
                 }
             });
         }
